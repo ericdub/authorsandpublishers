@@ -1,0 +1,256 @@
+<?php drupal_add_js('files/jscript/jquery_example/jquery.example.min.js'); ?>
+<script type="text/javascript">
+<!--
+if(Drupal.jsEnabled) {
+   $(document).ready(function(){
+		
+      	
+							  
+		$("#form1").submit(function() {
+              $("#detail").val($("#detail").val().substring(0,1000));
+      		    if  ($("#email").val().length == 0 ) {
+        		    if ( confirm("Are you sure you wish to submit your form without an e-mail address? We can't reply to your comment an e-mail address or other form of contact.") ) {
+                               return true;
+                           } else {
+                               return false;
+                           }
+      		    }
+                    
+    	        });
+		   
+   });
+}
+//-->    
+</script>
+
+<?php 
+   $req =  ( isset($_GET['c']) ) ? $_GET['c'] : '';  
+?>
+
+<?php if (isset($_GET['error'])): ?>
+<div class="error"><strong><?php echo $_GET['error']; ?></strong><br />-<?php echo $_GET['erroritem1']; ?></div>
+<? endif; ?>
+<p>Yes, I want to participate in the Information Exchange Fair at Columbia Public Library on May 4. </p>
+<form method="post" action="/mail/" id="form1" >
+ <fieldset class="form-box">
+ <legend>About You</legend>
+<input id="subject" name="subject" type="hidden" value="[Authors and Publishers Event]" /> 
+<input name="recipients" type="hidden" value="ap" />
+ <input name="good_url" type="hidden" value="http://www.dbrl.org/confirm?m=105&" /> 
+<input name="bad_url" type="hidden" value="http://www.dbrl.org/programs/mid-missouri-authors-and-publishers" />
+ 
+  <input type="hidden" name="env_report" value="HTTP_USER_AGENT,HTTP_REFERER,REMOTE_ADDR">
+  <?php /* ?><input type="hidden" name="required" value="email:Your email address" /><?php */ ?>
+  <input type="hidden" name="mail_options" value="PlainTemplate=publishers.txt,TemplateMissing=" />
+  <input type="hidden" name="datetime" value="<?php echo date('[d/m/Y:H:i:s O]'); ?>" />
+  <input type="hidden" name="REMOTE_ADDR" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>" />
+  <input type="hidden" name="HTTP_USER_AGENT" value="<?php echo $_SERVER['HTTP_USER_AGENT']; ?>" />
+
+
+  
+  
+
+
+<label for="role">I am a(n): </label>
+<select id="role" name="role">
+        <option value="author">Author</option>
+<option value="publisher">Publisher</option>
+</select>
+
+<br />
+
+<label for="realname">Your Name</label>
+  <input type="text" id="realname" name="realname" size="30" value="" />
+
+  <br />
+
+
+  <label for="company">Company:</label>
+
+  <input type="text" name="company" id="company" />
+<br />
+
+  <label for="phone">Phone:</label>
+  
+  <input type="text" name="phone" id="phone" />
+<br />
+  <label for="email">Email:</label>
+  
+  <input type="text" name="email" id="email" />
+
+  <label for="website">Website:</label>
+ 
+  <input type="text" name="website" id="website" />
+<br />
+
+<label for="questions">Questions or Comments:</label>
+<textarea name="questions" id="questions" cols="40" rows="5"></textarea>
+
+</fieldset>
+<fieldset class="form-box">
+<legend>Fiction Books</legend>
+<label for="fictionTitle">Title:</label>
+<input type="text" name="fictionTitle" id="fictionTitle" />
+<label for="genre">Genre:</label>
+<select name="genre" id="genre">
+    <option>Choose one...</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Romance">Romance</option>
+    <option value="SciFi">SciFi</option>
+    <option value="Western">Western</option>
+    <option value="Other">Other</option>
+  </select>
+<label for="fictionAudience">Audience:</label>
+<select name="fictionAudience" id="fictionAudience">
+    <option>Choose one...</option>
+    <option value="Adult">Adult</option>
+    <option value="Teen">Teen</option>
+    <option value="Children">Children</option>
+  </select>
+<hr />
+
+<label for="fictionTitle2">Title:</label>
+<input type="text" name="fictionTitle2" id="fictionTitle2" />
+<label for="genre2">Genre:</label>
+<select name="genre2" id="genre">
+    <option>Choose one...</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Romance">Romance</option>
+    <option value="SciFi">SciFi</option>
+    <option value="Western">Western</option>
+    <option value="Other">Other</option>
+  </select>
+<label for="fictionAudience2">Audience:</label>
+<select name="fictionAudience2" id="fictionAudience2">
+    <option>Choose one...</option>
+    <option value="Adult">Adult</option>
+    <option value="Teen">Teen</option>
+    <option value="Children">Children</option>
+  </select>
+<hr />
+
+<label for="fictionTitle3">Title:</label>
+<input type="text" name="fictionTitle3" id="fictionTitle3" />
+<label for="genre3">Genre:</label>
+<select name="genre3" id="genre">
+    <option>Choose one...</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Romance">Romance</option>
+    <option value="SciFi">SciFi</option>
+    <option value="Western">Western</option>
+    <option value="Other">Other</option>
+  </select>
+<label for="fictionAudience3">Audience:</label>
+<select name="fictionAudience3" id="fictionAudience3">
+    <option>Choose one...</option>
+    <option value="Adult">Adult</option>
+    <option value="Teen">Teen</option>
+    <option value="Children">Children</option>
+  </select>
+<hr />
+
+<label for="fictionTitle4">Title:</label>
+<input type="text" name="fictionTitle4" id="fictionTitle4" />
+<label for="genre4">Genre:</label>
+<select name="genre4" id="genre">
+    <option>Choose one...</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Romance">Romance</option>
+    <option value="SciFi">SciFi</option>
+    <option value="Western">Western</option>
+    <option value="Other">Other</option>
+  </select>
+<label for="fictionAudience4">Audience:</label>
+<select name="fictionAudience4" id="fictionAudience4">
+    <option>Choose one...</option>
+    <option value="Adult">Adult</option>
+    <option value="Teen">Teen</option>
+    <option value="Children">Children</option>
+  </select>
+<hr />
+
+<label for="fictionTitle5">Title:</label>
+<input type="text" name="fictionTitle5" id="fictionTitle5" />
+<label for="genre5">Genre:</label>
+<select name="genre5" id="genre">
+    <option>Choose one...</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Romance">Romance</option>
+    <option value="SciFi">SciFi</option>
+    <option value="Western">Western</option>
+    <option value="Other">Other</option>
+  </select>
+<label for="fictionAudience5">Audience:</label>
+<select name="fictionAudience5" id="fictionAudience5">
+    <option>Choose one...</option>
+    <option value="Adult">Adult</option>
+    <option value="Teen">Teen</option>
+    <option value="Children">Children</option>
+  </select>
+
+
+</fieldset>
+
+<fieldset class="form-box">
+<legend>Nonfiction Books</legend>
+<label for="nonFictionTitle">Title:</label>
+<input type="text" name="nonFictionTitle" id="nonFictionTitle" />
+
+<label for="audience">Audience:</label>
+<select name="audience" id="audience">
+    <option>Choose one...</option>
+    <option value="Adult">Adult</option>
+    <option value="Teen">Teen</option>
+    <option value="Children">Children</option>
+  </select>
+<hr />
+
+<label for="nonFictionTitle2">Title:</label>
+<input type="text" name="nonFictionTitle2" id="nonFictionTitle2" />
+
+<label for="audience2">Audience:</label>
+<select name="audience2" id="audience2">
+    <option>Choose one...</option>
+    <option value="Adult">Adult</option>
+    <option value="Teen">Teen</option>
+    <option value="Children">Children</option>
+  </select>
+<hr />
+<label for="nonFictionTitle3">Title:</label>
+<input type="text" name="nonFictionTitle3" id="nonFictionTitle3" />
+
+<label for="audience3">Audience:</label>
+<select name="audience3" id="audience3">
+    <option>Choose one...</option>
+    <option value="Adult">Adult</option>
+    <option value="Teen">Teen</option>
+    <option value="Children">Children</option>
+  </select>
+<hr />
+<label for="nonFictionTitle4">Title:</label>
+<input type="text" name="nonFictionTitle4" id="nonFictionTitle4" />
+
+<label for="audience4">Audience:</label>
+<select name="audience4" id="audience4">
+    <option>Choose one...</option>
+    <option value="Adult">Adult</option>
+    <option value="Teen">Teen</option>
+    <option value="Children">Children</option>
+  </select>
+<hr />
+<label for="nonFictionTitle5">Title:</label>
+<input type="text" name="nonFictionTitle5" id="nonFictionTitle5" />
+
+<label for="audience5">Audience:</label>
+<select name="audience5" id="audience5">
+    <option>Choose one...</option>
+    <option value="Adult">Adult</option>
+    <option value="Teen">Teen</option>
+    <option value="Children">Children</option>
+  </select>
+
+</fieldset>
+
+  <input name="submit" type="submit" value="Submit" />
+ 
+</form>
