@@ -65,14 +65,16 @@ if(Drupal.jsEnabled) {
   <br />
 
 <br>
-<label>
-  <input type="checkbox" name="booth" id="booth" />
-  Reserve a booth</label>
-<br />
-<label>
-  <input type="checkbox" name="reading" id="reading" />
-  Do a short reading (first come, first serve)</label>
-</br>
+  <label>
+   <p> Please sign me up for a booth at the book fair starting at 2 p.m. in the Friends Room and the adjoining Conference Rooms A &amp; B. Children's book author booths may be in the children's area.<br />
+    <input type="checkbox" name="booth" id="booth" />
+    Reserve a booth</label>
+</p>
+<p>Please sign me up to do a 10-15 minute book readin as time allows. Requests will be honored on a first-come basis and we will notify you of your alloted time.<br />
+  <label>
+    <input type="checkbox" name="reading" id="reading" />
+    Do a short reading </label>
+</p>
 
 
   <label for="company">Company:</label>
