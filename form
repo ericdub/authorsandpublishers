@@ -64,6 +64,16 @@ if(Drupal.jsEnabled) {
 
   <br />
 
+<br>
+<label>
+  <input type="checkbox" name="booth" id="booth" />
+  Reserve a booth</label>
+<br />
+<label>
+  <input type="checkbox" name="reading" id="reading" />
+  Do a short reading (first come, first serve)</label>
+</br>
+
 
   <label for="company">Company:</label>
 
